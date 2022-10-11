@@ -7,7 +7,7 @@ background-color: peachpuff;
 margin-bottom: 5px;
 }
 .avatar { 
-margin-left: 20px;
+margin-left: 10px;
 margin-right: 10px;
 margin-top: 10px;
 background-color: white;
@@ -18,4 +18,10 @@ position: absolute;
 font-size: 24px;
 font-weight: 600;
 display: inline-block;
+}
+.status_on {
+color: green;
+}
+.status_off {
+color: red;
 }

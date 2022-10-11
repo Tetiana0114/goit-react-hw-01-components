@@ -1,18 +1,23 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './FriendListItem.module.css'
+import { FaMobileAlt } from 'react-icons/fa';
 
 export const FriendListItem = ({ friends: { avatar, name, isOnline } }) => {
     return <li className={css.item}>
-    <span className={css.status}>{isOnline}</span>
+    {isOnline === true ? (
+        <span><FaMobileAlt size="24" className={css.status_on}/></span>
+      ) : (
+        <span><FaMobileAlt size="24" className={css.status_off}/></span>
+      )}
     <img className={css.avatar} src={avatar} alt="User avatar" width="60" />
     <p className={css.name}>{name}</p>
   </li>
   };
-    
-// FriendListItem.propTypes = {
-//   friends: PropTypes.array(PropTypes.shape({
-//     avatar: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     isOnline: PropTypes.bool.isRequired,
-//   }))
-// };
+
+FriendListItem.propTypes = {
+  friends: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+  })
+};
