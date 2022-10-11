@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './Profile.module.css'
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export const Profile = ({ username, tag, location, avatar, followers, views, likes }) => {
     return <div className={css.profile}>
@@ -12,7 +13,7 @@ export const Profile = ({ username, tag, location, avatar, followers, views, lik
       />
       <p className={css.name}>{username}</p>
       <p className={css.tag}>@{tag}</p>
-      <p className={css.location}>{location}</p>
+      <p className={css.location}><FaMapMarkerAlt size="24"/>{location}</p>
     </div>
   
     <ul className={css.stats}>
